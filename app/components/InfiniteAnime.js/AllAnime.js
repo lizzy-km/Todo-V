@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Button, Flex, Image, Skeleton } from "@chakra-ui/react";
+import { Button,  Skeleton } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Image } from "@chakra-ui/react";
 
 const fetchAnimeTitles = async (page) => {
   const response = await fetch(
     `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=${page}`
   );
-  return response.json();
+  const data = await response.json()
+  return {...data};
 };
 
 function AllAnime() {
@@ -20,7 +22,9 @@ function AllAnime() {
       },
     }
   );
-
+    useEffect(()=>{
+      fetchNextPage
+    },[])
   const animeTitles = data ? data.pages.flatMap((page) => page.data) : [];
 
   // const popular =animeTitles?.length >0 &&  animeTitles?.filter(itm => )
@@ -43,13 +47,9 @@ function AllAnime() {
     }, []);
 
   return (
-    <Flex
-      flexWrap={"wrap"}
-      w={"100%"}
-      gap={"4"}
-      p={"3"}
+    <div className=" flex-wrap flex w-full gap-4 p-3 "
+      
       id="scrollableDiv"
-      //  className=' max-h-[500px] overflow-y-auto '
     >
       <InfiniteScroll
         className="max-w-[90%] mx-auto flex flex-wrap gap-4 justify-center "
@@ -66,21 +66,18 @@ function AllAnime() {
       >
         {animeTitles?.length > 1 &&
           sortedProducts?.map((anime) => (
-            <Flex key={anime.id}>
+            <div className="flex" key={anime.id}>
               <Image
-                rounded={"8px"}
-                cursor={"pointer"}
-                fallback={<Skeleton />}
-                w={"140px"}
-                h={"200px"}
-                objectFit={"cover"}
+
+               className="  rounded-[8px] cursor-pointer w-[140px] h-[200px] object-cover "
+              
                 alt="image"
-                src={anime?.attributes?.posterImage?.original}
+                src={anime?.attributes?.posterImage?.medium}
               />
-            </Flex>
+            </div>
           ))}
       </InfiniteScroll>
-    </Flex>
+    </div>
   );
 }
 

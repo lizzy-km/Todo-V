@@ -34,7 +34,6 @@ const TodoCard = () => {
     },
   ];
 
-  const skl = 200;
 
   const getAllTodos = async () => {
     const res = await axios.get(url);

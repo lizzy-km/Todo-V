@@ -12,6 +12,7 @@ const HeroCard = ({animes}) => {
               scrollSnapStop={"always"}
               scrollSnapAlign={"center"}
               scrollSnapType={"x"}
+              w={'100%'}
               minW={"100%"}
               h={"100%"}
               rounded={"8px"}
@@ -22,7 +23,7 @@ const HeroCard = ({animes}) => {
               <Flex
                 className=" bg-blur "
                 minW={"100%"}
-                h={"100%"}
+                minH={"100%"}
                 rounded={"8px"}
                 backgroundImage={
                   "https://raw.githubusercontent.com/lizzy-km/cloudy-km/73c6a3f0fb3327a2b3544b0651b11b268c05fa80/layered-waves-haikei%20(2).svg"
