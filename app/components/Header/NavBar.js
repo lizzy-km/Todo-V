@@ -3,10 +3,15 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <Flex w={"100%"} boxShadow={"0px 0px 3px 2px #121212"}>
+    <Flex
+    className=' max-[500px]:justify-between '
+     w={"100%"} boxShadow={"0px 0px 3px 2px #121212"}>
           {/* Logo  */}
 
-          <Flex justify={"start"} gap={0}>
+          <Flex
+              className=' max-[500px]:w-full justify-start max-[500px]:justify-between '
+
+           gap={0}>
             <Text
               fontSize={{ base: "lg", md: "2xl" }}
               fontWeight={"semibold"}

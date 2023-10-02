@@ -9,18 +9,18 @@ const SideBar = () => {
 
   return (
     <div
-      className="bg-blur w-[25%] flex h-[530px] rounded-[8px] p-[1rem] bg-[#00112249] "
+      className="bg-blur max-[500px]:w-full w-[25%] flex max-[500px]:h-auto  h-[530px] rounded-[8px] p-[1rem] bg-[#00112249] "
     >
       <div className=" w-full h-full flex flex-col justify-evenly "
      
         >
-          <div className=" w-full h-full flex flex-col justify-evenly  "
+          <div className=" max-[500px]:justify-start snap-always snap-x w-full max-[500px]:h-auto h-full max-[500px]:max-w-[100%] max-[500px]:flex-row overflow-x-auto flex flex-col justify-evenly  "
         
           >
             {
               isSuccess && category.map((categories) =>{
                 return(
-                  <div className=" rounded-[8px] px-[1rem] py-[.5rem] justify-between shadow-md cursor-pointer w-full bg-bottom object-cover bg-cover hover:bg-[url('https://raw.githubusercontent.com/lizzy-km/cloudy-km/bd1a3416b93de9558f80b58c7ccf23ea5ee01985/layered-waves-haikei.svg')] "
+                  <div className=" snap-center max-[500px]:text-center max-[500px]:items-center rounded-[8px] px-[1rem] text py-[.5rem] max-[500px]:justify-center justify-between shadow-md cursor-pointer max-[500px]:min-w-[100%] w-full bg-bottom object-cover bg-cover hover:bg-[url('https://raw.githubusercontent.com/lizzy-km/cloudy-km/bd1a3416b93de9558f80b58c7ccf23ea5ee01985/layered-waves-haikei.svg')] "
                   
                   key={categories.id} >
                     <Text  >{categories.attributes.title}</Text>

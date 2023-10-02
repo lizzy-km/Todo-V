@@ -47,12 +47,12 @@ function AllAnime() {
     }, []);
 
   return (
-    <div className=" flex-wrap flex w-full gap-4 p-3 "
+    <div className=" flex-wrap flex min-w-full gap-4 p-3 "
       
       id="scrollableDiv"
     >
       <InfiniteScroll
-        className="max-w-[90%] mx-auto flex flex-wrap gap-4 justify-center "
+        className="max-w-[90%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap gap-4 justify-center "
         dataLength={animeTitles?.length}
         next={fetchNextPage}
         hasMore={true}
@@ -66,10 +66,10 @@ function AllAnime() {
       >
         {animeTitles?.length > 1 &&
           sortedProducts?.map((anime) => (
-            <div className="flex" key={anime.id}>
+            <div className="flex  " key={anime.id}>
               <Image
 
-               className="  rounded-[8px] cursor-pointer w-[140px] h-[200px] object-cover "
+               className=" max-[500px]:min-w-[50%] rounded-[8px] cursor-pointer w-[140px] h-[200px] object-cover "
               
                 alt="image"
                 src={anime?.attributes?.posterImage?.medium}

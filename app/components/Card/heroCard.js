@@ -5,19 +5,17 @@ const HeroCard = ({animes}) => {
 
     
   return (
-    <Flex
+    <Flex  className=' max-[500px]:min-w-full min-w-full h-full max-[500px]:h-[240px] '
               fallBack={<Skeleton />}
               backgroundImage={animes?.attributes?.coverImage?.original}
               objectFit={"cover"}
               scrollSnapStop={"always"}
               scrollSnapAlign={"center"}
               scrollSnapType={"x"}
-              w={'100%'}
-              minW={"100%"}
-              h={"100%"}
+              
               rounded={"8px"}
               position={"relative"}
-              className="bg-blur bg-[#312e2e29] "
+              
             >
               
               <Flex

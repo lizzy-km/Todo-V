@@ -1,8 +1,5 @@
 "use client";
 
-import {
-  Flex,
-} from "@chakra-ui/react";
 import NavBar from "./components/Header/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 import TodoCard from "./components/Card/TodoCard";
@@ -24,18 +21,18 @@ export default function Home() {
       >
         <NavBar />
 
-        <div className=" flex w-full h-[100vh] p-3 " >
+        <div className=" max-[500px]:flex-col flex w-full h-[100vh] p-3 " >
           <SideBar />
 
-          <div className=" w-[75%] max-h-[540px] flex flex-col overflow-y-auto gap-4 "
+          <div className="  max-[500px]:gap-0 max-[500px]:w-full max-[500px]:max-h-[100vh] w-[75%] max-h-[540px] flex flex-col overflow-y-auto m gap-4 "
           id="scrollableDiv"
            
           >
-            <div className=" flex w-full min-h-[540px] ">
+            <div className=" flex w-full max-[500px]:min-h-[270px] min-h-[540px] ">
               <TodoCard />
             </div>
 
-            <div className=" flex w-full min-h-[100vh] ">
+            <div className=" flex max-[500px]:min-w-full w-full min-h-[100vh] ">
             <AllAnime/>
 
             </div>

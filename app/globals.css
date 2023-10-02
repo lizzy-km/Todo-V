@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('./globals.sass'); */
 * {
     font-family: 'Nunito', sans-serif;
     scrollbar-width: none;

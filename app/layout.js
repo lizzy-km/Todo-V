@@ -2,6 +2,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { CacheProvider } from '@chakra-ui/next-js'
 import ProvidersCh from './Providers'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
