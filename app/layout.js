@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { CacheProvider } from '@chakra-ui/next-js'
 import { ChakraProvider } from '@chakra-ui/react'
 import ProvidersCh from './Providers'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false, // default: true
+      staleTime: 1000 * 60 * 60 * 24
     },
   },
 })
@@ -25,10 +27,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <ProvidersCh>
         {children}
+        <ReactQueryDevtools initialIsOpen={false} />
+
       </ProvidersCh>
         </body>
     </html> 
-      
     </QueryClientProvider>
     
   )
