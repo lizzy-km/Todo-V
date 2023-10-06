@@ -9,10 +9,10 @@ const NavBar = () => {
           {/* Logo  */}
 
           <Flex
-              className=' max-[500px]:w-full justify-start max-[500px]:justify-between '
+              className=' max-[500px]:w-full justify-start  '
 
            gap={0}>
-            <Text
+            <Text className=' max-[500px]:rounded-[0px] '
               fontSize={{ base: "lg", md: "2xl" }}
               fontWeight={"semibold"}
               px={".8rem"}

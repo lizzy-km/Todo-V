@@ -47,12 +47,12 @@ function AllAnime() {
     }, []);
 
   return (
-    <div className=" flex-wrap flex min-w-full gap-4 p-3 "
+    <div className=" flex-wrap flex min-w-full gap-4 max-[500px]:px- p-3 "
       
       id="scrollableDiv"
     >
       <InfiniteScroll
-        className="max-w-[90%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap gap-4 justify-center "
+        className="max-w-[90%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap max-[500px]:justify-evenly gap-6 justify-center "
         dataLength={animeTitles?.length}
         next={fetchNextPage}
         hasMore={true}

@@ -50,12 +50,13 @@ const TodoCard = () => {
   const anime = data?.data;
 
   return (
-    <Flex className=" p-[1rem] max-[500px]:px-0 max-[500px]:py-[1rem] "
+    <Flex className="  p-[1rem] max-[500px]:px-0 max-[500px]:py-[1rem] "
       maxW={"100%"}
       minW={'100%'}
       w={"100%"}
       maxH={"100vh"}
       overflowX={"scroll"}
+      overflowY={'hidden'}
       gap={"4"}
       scrollSnapStop={"normal"}
       scrollSnapAlign={"center"}

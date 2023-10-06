@@ -5,7 +5,7 @@ const HeroCard = ({animes}) => {
 
     
   return (
-    <Flex  className=' max-[500px]:min-w-full min-w-full h-full max-[500px]:h-[240px] '
+    <Flex  className=' max-[500px]:rounded-[0px] max-[500px]:min-w-full min-w-full h-full max-[500px]:h-[200px] '
               fallBack={<Skeleton />}
               backgroundImage={animes?.attributes?.coverImage?.original}
               objectFit={"cover"}
