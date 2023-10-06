@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Button,  Skeleton } from "@chakra-ui/react";
+import { Button,  Skeleton, Text } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Image } from "@chakra-ui/react";
 import Card from "./Card";
@@ -26,9 +26,8 @@ function AllAnime() {
     useEffect(()=>{
       fetchNextPage
     },[])
-  const animeTitles = data ? data.pages.flatMap((page) => page.data) : [];
 
-  // const popular =animeTitles?.length >0 &&  animeTitles?.filter(itm => )
+  const animeTitles = data ? data.pages.flatMap((page) => page.data) : [];
 
   const sortedProducts =
     animeTitles?.length > 0 &&
@@ -54,9 +53,7 @@ function AllAnime() {
       
       id="scrollableDiv"
     >
-      {/* <textarea rows={'10'}  >
-
-      </textarea> */}
+      
       <InfiniteScroll
         className="max-w-[95%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap max-[500px]:justify-evenly gap-6 justify-center "
         dataLength={animeTitles?.length}
@@ -71,8 +68,13 @@ function AllAnime() {
         }
       >
         {animeTitles?.length > 1 && isSuccess &&
-          animeTitles?.map((anime) => (
-           <Card   key={anime?.id} anime={anime} />
+          sortedProducts?.map((anime) => (
+            <div className=" flex flex-col gap-2 w-[140px] h-auto " key={anime?.id} >
+              <Card    anime={anime} />
+
+              <Text key={anime?.id}  className=" line-clamp-2 cursor-pointer bg-bottom object-cover bg-cover hover:bg-[url('https://raw.githubusercontent.com/lizzy-km/cloudy-km/bd1a3416b93de9558f80b58c7ccf23ea5ee01985/layered-waves-haikei.svg')] card-text p-1   rounded text-center " > {anime?.attributes?.titles?.en_jp} </Text>
+
+            </div>
           ))}
       </InfiniteScroll>
     </div>

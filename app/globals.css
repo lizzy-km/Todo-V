@@ -31,6 +31,12 @@
     height: auto;
   }
 
+  .card-text {
+    backdrop-filter: blur(6px);
+    background-color: #0b02233d;
+    height: auto;
+  }
+
   .card-hold:hover .card-img {
     height: 80px;
   }

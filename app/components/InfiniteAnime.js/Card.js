@@ -1,6 +1,8 @@
-import { ArrowRightIcon } from '@chakra-ui/icons'
+import {IoMdHeartEmpty}  from 'react-icons/io'
+import {FaRegUser} from 'react-icons/fa'
 import { Button, Image, Skeleton, Text } from '@chakra-ui/react'
 import React from 'react'
+import Rating from './Rating'
 
 const Card = ({anime}) => {
 
@@ -27,17 +29,21 @@ const Card = ({anime}) => {
               src={anime?.attributes?.coverImage?.original}
                />
                <div className=' card-detail  max-h-[24%] overflow-hidden text-sm min-h-[10%] absolute bottom-3 p-1 left -3 w-full text-left  '>
-               <Text  className=' line-clamp-2 card-text p-1 h-auto card-blur rounded text-center ' > {data?.titles?.en_jp} </Text>
-                <div className=' card-icon h-auto p-2 flex w-full justify-start gap-1 ' >
-                    <div className='border border-white border-1 h-4 justify-center items-center flex px-[8px] rounded bg-blur ' >
+                <div className=' card-icon h-auto p-2 flex flex-col w-full justify-start gap-1 ' >
+                <Rating rate={data?.averageRating} />
+                <div className=' flex gap-1 ' >
+                <div className='border border-white border-1 h-4 justify-center items-center flex px-[8px] rounded bg-blur ' >
                         <p className=' line-clamp-2 text-[7px] p-0 ' > {data?.subtype.toUpperCase()} </p>
                     </div>
-                    <div className='border border-white border-1 h-4 justify-center items-center flex px-[8px] rounded bg-blur ' >
-                      <p className=' text-[7px] p-0 ' > {kConvertor(data?.userCount)} </p>
+                    <div className='border gap-1 text-[7px] border-white border-1 h-4 justify-center items-center flex px-[8px] rounded bg-blur ' >
+                     <FaRegUser/> <p className=' text-[7px] p-0 ' > {kConvertor(data?.userCount)} </p>
                     </div>
-                    <div className='border border-white border-1 h-4 justify-center items-center flex px-[8px] rounded bg-blur ' >
-                      <p className=' text-[7px] p-0 ' > {kConvertor(data?.favoritesCount)} </p>
+                    <div className='border gap-1 text-[7px] border-white border-1 h-4 justify-evenly items-center flex px-[8px] rounded bg-blur ' >
+                     <IoMdHeartEmpty /> <p className=' text-[7px] p-0 ' > {kConvertor(data?.favoritesCount)} </p>
                     </div>
+                </div>
+
+                    
                 </div>
                     <Button className=' max-h-[1.5rem] hover:bg-[#FF0066] view bg-blur text-[#fff] text-sm  '  >View</Button>
                </div>

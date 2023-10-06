@@ -5096,6 +5096,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^4.11.0":
+  version: 4.11.0
+  resolution: "react-icons@npm:4.11.0"
+  peerDependencies:
+    react: "*"
+  checksum: 7b8b80bbe2dabcc54b6c2129b7761a04b19caebe24389adc7683478ef41212b9ca0b53c63abcc06b3c01b94c84855ec5142b4c357e19c4aaaad9a4db23a3c485
+  languageName: node
+  linkType: hard
+
 "react-infinite-scroll-component@npm:^6.1.0":
   version: 6.1.0
   resolution: "react-infinite-scroll-component@npm:6.1.0"
@@ -5111,6 +5120,13 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-rating-stars-component@npm:^2.2.0":
+  version: 2.2.3
+  resolution: "react-rating-stars-component@npm:2.2.3"
+  checksum: 73be7b080aa02372ab06642d50f29cf08eea24276c01b68905ef10e0293835fd986ebfa5e0f4b650e504e8215b16aacdf3f858fead2df2bdc77a5f7d8dbad4ee
   languageName: node
   linkType: hard
 
@@ -5756,7 +5772,9 @@ __metadata:
     postcss: 8.4.30
     react: 18.2.0
     react-dom: 18.2.0
+    react-icons: ^4.11.0
     react-infinite-scroll-component: ^6.1.0
+    react-rating-stars-component: ^2.2.0
     sass: ^1.68.0
     tailwindcss: 3.3.3
   languageName: unknown
