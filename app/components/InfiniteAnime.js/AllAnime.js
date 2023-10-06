@@ -3,6 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { Button,  Skeleton } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Image } from "@chakra-ui/react";
+import Card from "./Card";
 
 const fetchAnimeTitles = async (page) => {
   const response = await fetch(
@@ -13,7 +14,7 @@ const fetchAnimeTitles = async (page) => {
 };
 
 function AllAnime() {
-  const { data, fetchNextPage } = useInfiniteQuery(
+  const { data, fetchNextPage ,isSuccess, isLoading } = useInfiniteQuery(
     ["animeTitles"],
     ({ pageParam = 0 }) => fetchAnimeTitles(pageParam),
     {
@@ -46,13 +47,18 @@ function AllAnime() {
       return accumulator;
     }, []);
 
+    const allAnime = animeTitles?.filter(anime => anime?.title)
+
   return (
     <div className=" flex-wrap flex min-w-full gap-4 max-[500px]:px- p-3 "
       
       id="scrollableDiv"
     >
+      {/* <textarea rows={'10'}  >
+
+      </textarea> */}
       <InfiniteScroll
-        className="max-w-[90%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap max-[500px]:justify-evenly gap-6 justify-center "
+        className="max-w-[95%] max-[500px]:min-w-full max-[500px]:max-w-full mx-auto flex flex-wrap max-[500px]:justify-evenly gap-6 justify-center "
         dataLength={animeTitles?.length}
         next={fetchNextPage}
         hasMore={true}
@@ -64,17 +70,9 @@ function AllAnime() {
           </p>
         }
       >
-        {animeTitles?.length > 1 &&
-          sortedProducts?.map((anime) => (
-            <div className="flex  " key={anime.id}>
-              <Image
-
-               className=" max-[500px]:min-w-[50%] rounded-[8px] cursor-pointer w-[140px] h-[200px] object-cover "
-              
-                alt="image"
-                src={anime?.attributes?.posterImage?.medium}
-              />
-            </div>
+        {animeTitles?.length > 1 && isSuccess &&
+          animeTitles?.map((anime) => (
+           <Card   key={anime?.id} anime={anime} />
           ))}
       </InfiniteScroll>
     </div>

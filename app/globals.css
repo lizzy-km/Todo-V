@@ -7,8 +7,75 @@
 * {
     font-family: 'Nunito', sans-serif;
     scrollbar-width: none;
-    transition: .4s;
+    transition: all .3s ease-in-out;
   }
+
+  textarea::-webkit-resizer {
+    background-color: red;
+    border: 2px solid black;
+    width: 10px;
+    height: 10px;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .card-hold {
+    cursor: pointer;
+  }
+
+  .card-img {
+    height: 100%;
+  }
+
+  .card-detail {
+    height: auto;
+  }
+
+  .card-hold:hover .card-img {
+    height: 80px;
+  }
+
+  .card-hold:hover .card-detail {
+    max-height: 67%;
+    min-height: 67%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    background-color: #0b02237b;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    padding: 0;
+  }
+
+  .view {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 8px 0;
+    opacity: 0;
+  }
+
+  .card-icon {
+    opacity: 0;
+  }
+
+  .card-hold:hover .card-icon {
+    opacity: 1;
+  }
+
+  .card-hold:hover .view {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px 0 8px 0;
+    opacity: 1;
+  }
+
+  .card-hold:hover .card-text {
+    text-align: left;
+    font-size: smaller;
+  }
+
 
 *::-webkit-scrollbar{
   display: none;
@@ -20,6 +87,11 @@ body{
 
 .bg-blur {
   backdrop-filter: blur(6px);
+}
+
+.card-blur {
+  backdrop-filter: blur(4px);
+  background-color: #0b02237b;
 }
 
 
