@@ -12,9 +12,9 @@ const Card = ({anime}) => {
         return num <= 999 ? num : (num/1000).toFixed (1) + 'k'
       }
 
-    if (anime?.attributes?.coverImage?.original) {
+    if (anime?.attributes?.coverImage?.original && anime?.attributes?.posterImage?.medium) {
         return (
-            <div className="flex justify-end items-end rounded-[8px] relative w-[140px] h-[200px] " key={anime.id}>
+            <div className="flex justify-end items-end card-blur rounded-[8px] relative w-[140px] min-h-[200px] " key={anime.id}>
             <Image loading='lazy'
             fallback={<Skeleton/>}
         

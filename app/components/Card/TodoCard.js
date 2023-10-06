@@ -7,34 +7,6 @@ import HeroCard from "./heroCard";
 const TodoCard = () => {
   const url = "https://kitsu.io/api/edge/trending/anime/";
 
-  const loadingArr = [
-    {
-      id: "1",
-    },
-    {
-      id: "2",
-    },
-    {
-      id: "3",
-    },
-    {
-      id: "4",
-    },
-    {
-      id: "5",
-    },
-    {
-      id: "6",
-    },
-    {
-      id: "7",
-    },
-    {
-      id: "8",
-    },
-  ];
-
-
   const getAllTodos = async () => {
     const res = await axios.get(url);
     return res?.data;
@@ -67,20 +39,19 @@ const TodoCard = () => {
           w={"100%"}
           h={"100%"}
           rounded={"8px"}
-          bg={"blackAlpha.500"}
+          opacity={'0.6'}
           gap={"6"}
           justify={"space-between"}
           alignItems={"center"}
           flexDirection={"column"}
           p={"2"}
         >
-          <Skeleton minW={"100%"} h={"100%"} rounded={"8px"} />
+          <Skeleton className=" opacity-60 card-blur " minW={"100%"} h={"100%"} rounded={"8px"} />
         </Flex>
       )}
 
       {isSuccess &&
         anime.map((animes) => {
-          console.log(anime.id);
           return (
             <HeroCard key={animes.id} animes={animes} />
           );

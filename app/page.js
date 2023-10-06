@@ -9,7 +9,7 @@ import AllAnime from "./components/InfiniteAnime.js/AllAnime";
 export default function Home() {
 
   
-  
+  console.log('page is run');
 
   return (
     <div className=" p-[.7rem] max-[500px]:p-0 object-cover flex flex-col text-gray-300 bg-no-repeat bg-cover  w-[100%] max-h-[100vh] min-h-screen overflow-hidden bg-[url('https://raw.githubusercontent.com/lizzy-km/cloudy-km/cd60ca7bd4fdbb3863f881d146b2650242f6fd57/stacked-peaks-haikei.svg')] "
