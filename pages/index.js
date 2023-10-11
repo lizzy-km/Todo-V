@@ -1,10 +1,8 @@
-"use client";
-
-import NavBar from "./components/Header/NavBar";
-import SideBar from "./components/SideBar/SideBar";
 import TodoCard from "./components/Card/TodoCard";
+import NavBar from "./components/Header/NavBar";
 import AllAnime from "./components/InfiniteAnime.js/AllAnime";
-//Icons
+import SideBar from "./components/SideBar/SideBar";
+
 
 export default function Home() {
 

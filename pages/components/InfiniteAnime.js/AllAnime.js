@@ -24,9 +24,7 @@ function AllAnime() {
       },
     }
   );
-    useEffect(()=>{
-      fetchNextPage
-    },[])
+   
 
   const animeTitles = data ? data.pages.flatMap((page) => page.data) : [];
 

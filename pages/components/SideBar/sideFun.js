@@ -7,7 +7,7 @@ const  useSideFun= (props)=>{
         return res.data;
       };
     
-      const { data, isError, isLoading, isSuccess } = useQuery({
+      const { data, isSuccess } = useQuery({
         queryKey: ["get", "category"],
         queryFn: fetchDay,
       });
@@ -16,7 +16,7 @@ const  useSideFun= (props)=>{
 
 
     return {
-        category, isError, isLoading, isSuccess
+        category, isSuccess
     }
 }
 

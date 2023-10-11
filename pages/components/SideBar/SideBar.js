@@ -5,7 +5,7 @@ import useSideFun from "./sideFun";
 const SideBar = () => {
  
 
- const { category,isError,isLoading,isSuccess } = useSideFun()
+ const { category,isSuccess } = useSideFun()
 
   return (
     <div
@@ -18,7 +18,7 @@ const SideBar = () => {
         
           >
             {
-              isSuccess && category.map((categories) =>{
+              isSuccess && category.map(categories =>{
                 return(
                   <div className="  bg-blur snap-center max-[500px]:text-center max-[500px]:items-center rounded-[8px] px-[1rem] text py-[.5rem] max-[500px]:justify-center justify-between  cursor-pointer max-[500px]:min-w-[100%] w-full bg-bottom object-cover bg-cover hover:bg-[url('https://raw.githubusercontent.com/lizzy-km/cloudy-km/bd1a3416b93de9558f80b58c7ccf23ea5ee01985/layered-waves-haikei.svg')] "
                   
